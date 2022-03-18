@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "SamsungPracticeSchool"
 include ':app'
 include ':practice2_6'
+include ':practice2_7'
