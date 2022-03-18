@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SamsungPracticeSchool</string>
+    <string name="counter">Counter:</string>
+    <string name="increment">Increment</string>
 </resources>
