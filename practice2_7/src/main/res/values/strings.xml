@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">practice2_7</string>
+    <string name="app_name">UI elements</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="check">Check</string>
+    <string name="random_text">Name</string>
+    <string name="show">Show</string>
+    <string name="radiobutton_1">RadioButton 1</string>
+    <string name="radiobutton_2">RadioButton 2</string>
 </resources>

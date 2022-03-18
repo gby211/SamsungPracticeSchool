@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = provider.get(RandomViewModel::class.java)
 
         initView()
+        observeViewModel()
     }
 
     fun initView(){
