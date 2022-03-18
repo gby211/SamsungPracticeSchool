@@ -1,0 +1,12 @@
+package com.example.samsungpracticeschool
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+class MainViewModel: ViewModel() {
+    val counter = MutableLiveData<Int>()
+
+    fun onIncrementCliked(){
+        counter.value = (counter.value ?: 0) +1
+    }
+}
