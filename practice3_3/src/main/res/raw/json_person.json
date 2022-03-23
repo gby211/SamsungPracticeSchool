@@ -1,0 +1,12 @@
+[
+  {
+    "sex": "male",
+    "name": "Pasha",
+    "phoneNumber": "12345678"
+  },
+  {
+    "sex": "female",
+    "name": "Sofa",
+    "phoneNumber": "12345678"
+  }
+]
