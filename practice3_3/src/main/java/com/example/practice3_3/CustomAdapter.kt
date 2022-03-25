@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+
 class CustomAdapter(private val persons: List<Person>): RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textViewName: TextView = itemView.findViewById(R.id.textViewName)
@@ -22,9 +23,9 @@ class CustomAdapter(private val persons: List<Person>): RecyclerView.Adapter<Cus
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val person : Person = persons[position]
-        holder.textViewName.text = "ggs"
-        holder.textViewPhone.text = "123"
-//        holder.imageViewSex. =
+        holder.textViewName.text = person.name
+        holder.textViewPhone.text = person.phoneNumber
+        holder.imageViewSex.setImageResource(if(person.sex == "f") R.drawable.female else R.drawable.male)
     }
 
     override fun getItemCount() = persons.size

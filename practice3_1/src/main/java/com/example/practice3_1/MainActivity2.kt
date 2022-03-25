@@ -20,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
         var firstValue = intent.getIntExtra(FIRST_VALUE, 0)
         var secondValue = intent.getIntExtra(SECOND_VALUE, 0)
 
-        textView4.text = "ваше чило больше ${averageNumber(firstValue, secondValue)}?"
+        textView4.text = "Ваше чило больше или равно ${averageNumber(firstValue, secondValue)}?"
 
         button.setOnClickListener {
             secondValue -= (secondValue - firstValue) / 2
