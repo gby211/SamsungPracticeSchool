@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity() {
         when (sortBy) {
             1 -> {
                 recyclerView.adapter = CustomAdapter(arList.sortedBy { it.name })
-
             }
             2 -> {
                 recyclerView.adapter = CustomAdapter(arList.sortedBy { it.phoneNumber })
