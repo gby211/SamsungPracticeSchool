@@ -3,40 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="reverse"
+        android:layout_marginTop="8dp"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fr1"
-        tools:layout="@layout/fragment_blank1"
         android:name="com.example.practice3_5.BlankFragment1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/fr2"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout="@layout/fragment_blank1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fr2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fr2"
-        tools:layout="@layout/fragment_blank2"
+        android:id="@id/fr2"
+        android:name="com.example.practice3_5.BlankFragment2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:name="com.example.practice3_5.BlankFragment2"
+        tools:layout="@layout/fragment_blank2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fr1" />
+        app:layout_constraintStart_toEndOf="@+id/fr1"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

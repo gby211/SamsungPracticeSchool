@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBtn(){
-        binding.button.setOnClickListener{
+        binding.button?.setOnClickListener{
             val blankFragment1 = BlankFragment1()
             val blankFragment2 = BlankFragment2()
             val manager = supportFragmentManager

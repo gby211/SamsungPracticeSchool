@@ -6,37 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="reverse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fr1"
-        tools:layout="@layout/fragment_blank1"
-        android:name="com.example.practice3_5.BlankFragment1"
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.practice3_6.BlankFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/fr2"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_blank"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fr2"
-        tools:layout="@layout/fragment_blank2"
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.practice3_6.BlankFragment2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:name="com.example.practice3_5.BlankFragment2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fr1" />
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView"
+        tools:layout="@layout/fragment_blank2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
