@@ -25,7 +25,7 @@ class BlankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val colorNames: Array<String> = resources.getStringArray(R.array.colorNames)
-        val colorValues: Array<String> = resources.getStringArray(R.array.colorValues) as Array<String>
+        val colorValues: IntArray = resources.getIntArray(R.array.colorValues)
 
         recyclerView = view.findViewById(R.id.recyclerViewGgs)
         recyclerView.layoutManager = LinearLayoutManager(activity)

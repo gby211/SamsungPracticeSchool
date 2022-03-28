@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val colorNames: Array<String>,private val colorsValues: Array<String>): RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
+class CustomAdapter(private val colorNames: Array<String>,private val colorsValues: IntArray): RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
 
 
 
@@ -23,7 +23,10 @@ class CustomAdapter(private val colorNames: Array<String>,private val colorsValu
     override fun onBindViewHolder(holder: CustomAdapter.MyViewHolder, position: Int) {
         holder.textVew.setBackgroundColor(colorsValues[position].toInt())
         holder.textVew.text = colorNames[position].toString()
+        holder.textVew.setOnClickListener {
+            //TODO вообще не понятно
+        }
     }
 
-    override fun getItemCount() = colorNames.size
+    override fun getItemCount() = 140
 }
