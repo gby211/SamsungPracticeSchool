@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class BlankFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-
+    private var viewModel = MyViewModel.getMyViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class BlankFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerViewGgs)
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = CustomAdapter(colorNames,colorValues)
+        recyclerView.adapter = CustomAdapter(colorNames,colorValues,viewModel)
 
         super.onViewCreated(view, savedInstanceState)
     }

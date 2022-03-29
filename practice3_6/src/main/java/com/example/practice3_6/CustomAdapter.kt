@@ -6,9 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val colorNames: Array<String>,private val colorsValues: IntArray): RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
-
-
+class CustomAdapter(private val colorNames: Array<String>,private val colorsValues: IntArray,private var viewModel: MyViewModel): RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textVew : TextView = itemView.findViewById(R.id.textViewItem)
@@ -24,7 +22,7 @@ class CustomAdapter(private val colorNames: Array<String>,private val colorsValu
         holder.textVew.setBackgroundColor(colorsValues[position].toInt())
         holder.textVew.text = colorNames[position].toString()
         holder.textVew.setOnClickListener {
-            //TODO вообще не понятно
+            viewModel.onClickBtn(colorsValues[position].toInt())
         }
     }
 
