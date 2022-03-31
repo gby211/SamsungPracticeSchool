@@ -40,7 +40,7 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mView.setOnClickListener {
-            TestCheckboxDialog().show(requireActivity().supportFragmentManager, "YesNoCancelDialog")
+            TestCheckboxDialog(id).show(requireActivity().supportFragmentManager, "YesNoCancelDialog")
         }
         Log.d("ggs","onViewCreated")
     }
