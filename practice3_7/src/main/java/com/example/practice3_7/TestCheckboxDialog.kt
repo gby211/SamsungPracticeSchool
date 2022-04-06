@@ -18,7 +18,7 @@ class TestCheckboxDialog(val id1: Int) : DialogFragment() {
                 .setPositiveButton(
                     "Ok"
                 ) { dialog, which ->
-                    TestTimePickerDialog(checked.toTypedArray(),id1).show(
+                    TestTimePickerDialog(checked.toTypedArray(),id1,requireActivity().supportFragmentManager).show(
                         requireActivity().supportFragmentManager,
                         "YesNoCancelDialog1"
                     )

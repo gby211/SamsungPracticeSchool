@@ -8,13 +8,13 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import java.util.*
 
-class TestTimePickerDialog(private val params: Array<Boolean>, val id1: Int): DialogFragment() {
+class TestTimePickerDialog(private val params: Array<Boolean>, val id1: Int,val fmm : FragmentManager): DialogFragment() {
     val c = Calendar.getInstance();
     val curHour = c.get(Calendar.HOUR_OF_DAY);
     val curMinute = c.get(Calendar.MINUTE);
     val a:Boolean = params[0]
     val b:Boolean = params[1]
-    var fm: FragmentManager = requireActivity().supportFragmentManager
+    var fm: FragmentManager = fmm
     val fragment: BlankFragment = fm.findFragmentById(id1) as BlankFragment;
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         Log.d("ggs", a.toString() + b)

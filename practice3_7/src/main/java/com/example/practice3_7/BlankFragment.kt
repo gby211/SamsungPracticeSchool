@@ -42,6 +42,7 @@ class BlankFragment : Fragment() {
         mView.setOnClickListener {
             TestCheckboxDialog(id).show(requireActivity().supportFragmentManager, "YesNoCancelDialog")
         }
+        mView.setState(1,2, sun = false, moonstars = true)
         Log.d("ggs","onViewCreated")
     }
     /*******************************************
