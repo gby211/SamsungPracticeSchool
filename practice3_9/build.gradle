@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdk 32
-    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "ru.samsung.itschool.a3_9_practical_work"
