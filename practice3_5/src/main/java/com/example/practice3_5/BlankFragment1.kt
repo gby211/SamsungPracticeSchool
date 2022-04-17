@@ -16,7 +16,6 @@ class BlankFragment1 : Fragment() {
         }
     }
 
-    //3
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
