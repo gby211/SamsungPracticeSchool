@@ -21,7 +21,6 @@ class MainActivityTest {
         onView(withId(R.id.text_message)).check(matches(isDisplayed()))
     }
 
-
     @Test
     fun secondActivityTextIsDisplayed(){
         onView(withId(R.id.editText_main)).perform(ViewActions.typeText(ggwp))
@@ -29,12 +28,11 @@ class MainActivityTest {
         onView(withId(R.id.text_message)).check(matches(withText(ggwp)))
     }
 
-
     @Test
     fun secondActivityEditTextIsClear(){
         onView(withId(R.id.editText_main)).perform(ViewActions.typeText(ggwp))
         onView(withId(R.id.button_main)).perform(ViewActions.click())
-        onView(withId(R.id.text_message)).check(matches(withText("")))
+        onView(withId(R.id.editText_second)).check(matches(withText("")))
     }
 
 
