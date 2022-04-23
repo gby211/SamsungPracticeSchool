@@ -27,6 +27,8 @@ class RateCheckService : Service() {
     lateinit var targetRate: BigDecimal
     val rateCheckInteractor = RateCheckInteractor()
 
+    private val CHANNEL_ID = "My_Channel_ID"
+    val channelId = "My_Channel_ID"
     val rateCheckRunnable: Runnable = Runnable {
         rateCheckAttempt++
 
@@ -49,7 +51,7 @@ class RateCheckService : Service() {
             if ((startRate >= targetRate && rateBigDecimal <= targetRate) ||
                 (startRate < targetRate && rateBigDecimal >= targetRate)
             ) {
-                //Toast.makeText(applicationContext, "Rate = $rate", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Rate = $rate", Toast.LENGTH_LONG).show()
                 sendNotification(rate)
                 stopSelf()
             } else {
@@ -79,12 +81,42 @@ class RateCheckService : Service() {
 
     fun sendNotification(rate: String) {
         createNotificationChannel()
-        //Write your code here
+        val notificationIntent = Intent(this, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0, notificationIntent, 0
+        )
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentTitle("GGSS kurs vash - $rate")
+            .setContentText(rate)
+            .setSmallIcon(androidx.constraintlayout.widget.R.drawable.abc_ic_star_black_48dp)
+            .setContentIntent(pendingIntent)
+
+//        startForeground(1, notification.build())
+
+        with(NotificationManagerCompat.from(this)){
+            notify(1, notification.build())
+        }
     }
 
 
     private fun createNotificationChannel() {
         //Write your code here
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val name = "My Channel"
+            val channelDescription = "Channel Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+
+            val channel = NotificationChannel(channelId,name,importance)
+            channel.apply {
+                description = channelDescription
+            }
+
+            // Наконец регистрируем канал в системе
+            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
 
