@@ -90,14 +90,18 @@ class RateCheckService : Service() {
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("GGSS kurs vash - $rate")
             .setContentText(rate)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setSmallIcon(androidx.constraintlayout.widget.R.drawable.abc_ic_star_black_48dp)
             .setContentIntent(pendingIntent)
-
+            .setVibrate(LongArray(0))
 //        startForeground(1, notification.build())
 
         with(NotificationManagerCompat.from(this)){
             notify(1, notification.build())
         }
+
+
+
     }
 
 
