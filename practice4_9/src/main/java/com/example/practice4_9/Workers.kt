@@ -87,10 +87,11 @@ class TextWorker(context: Context, workerParams: WorkerParameters) : Worker(cont
         Log.d("test_worker","text_worker_star")
 
 
-        while (s == "friend"){
-            for(ii in 0 until 5){
+        while (s != "friend"){
+            for(ii in 0 until 6){
                 for (jj in 'a'..'z'){
-                    if (ggs[ii] == jj) c.padEnd(1,jj)
+                    if (ggs[ii] == jj)
+                        c+= jj
                 }
             }
             s = c
