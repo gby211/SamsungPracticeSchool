@@ -77,15 +77,27 @@ class TextWorker(context: Context, workerParams: WorkerParameters) : Worker(cont
     val p = 'p'
     val t = 't'
     val m = 'm'
+
+    val ggs = "friend"
+
     var s : String = ""
-    var c : String = "friend"
+    var c : String = ""
 
     override fun doWork(): Result {
         Log.d("test_worker","text_worker_star")
 
 
+        while (s == "friend"){
+            for(ii in 0 until 5){
+                for (jj in 'a'..'z'){
+                    if (ggs[ii] == jj) c.padEnd(1,jj)
+                }
+            }
+            s = c
+        }
 
-        val d = Data.Builder().putString("data_is",c).build()
+
+        val d = Data.Builder().putString("data_is",s).build()
         Log.d("test_worker","text_worker_stop")
         return Result.success(d)
     }
